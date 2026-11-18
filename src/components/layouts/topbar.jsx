@@ -1,4 +1,4 @@
-import Logo from "../../assets/images/logo.webp";
+import Logo from "../../assets/images/Logo.webp";
 export default function Topbar() {
     return (
         <div className="shadow-lg py-2 px-10 flex items-center justify-between bg-white border-2 border-slate-200">

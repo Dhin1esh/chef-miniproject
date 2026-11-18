@@ -1,5 +1,5 @@
 
-import Logo from "../../assets/images/logo.webp";
+import Logo from "../../assets/images/Logo.webp";
 import { Link } from "react-router-dom";
 import {
     LayoutDashboard,
