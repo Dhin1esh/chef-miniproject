@@ -9,7 +9,7 @@ import {
 
 export default function Sidebar() {
     return (
-        <div className="w-64 h-screen bg-slate-800 text-white p-5 flex flex-col">
+        <div className="w-64 bg-slate-800 text-white p-5 flex flex-col">
 
             {/* Logo */}
             <div className="flex justify-center items-center mb-10">
@@ -30,15 +30,15 @@ export default function Sidebar() {
 
                 <Link
                     to="/dashboard"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-blue-700 transition"
                 >
                     <LayoutDashboard size={20} />
                     <span>Dashboard</span>
                 </Link>
 
                 <Link
-                    to="/meal-card"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-blue-600 hover:text-white transition"
+                    to="/meal-list"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-blue-600 hover:text-white transition"
                 >
                     <CreditCard size={20} />
                     <span>Meal Card</span>
@@ -46,7 +46,7 @@ export default function Sidebar() {
 
                 <Link
                     to="/meal-create"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-300 hover:bg-blue-600 hover:text-white transition"
+                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-blue-600 hover:text-white transition"
                 >
                     <PlusCircle size={20} />
                     <span>Meal Create</span>
