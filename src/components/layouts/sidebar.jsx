@@ -1,15 +1,24 @@
 
 import Logo from "../../assets/images/Logo.webp";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
     LayoutDashboard,
     CreditCard,
-    PlusCircle
+    PlusCircle,
+    Icon
 } from "lucide-react";
 
 export default function Sidebar() {
+
+    const navLinks = [
+        { name: "Dashboard", Icon: LayoutDashboard, path: "/dashboard" },
+        { name: "Meal Card", Icon: CreditCard, path: "/meal-list" },
+        { name: "Meal Create", Icon: PlusCircle, path: "/meal-create" },
+    ]
+
+    const navLinkclass = "flex items-center gap-3 px-4 py-3 rounded-lg text-white"
     return (
-        <div className="w-64 bg-slate-800 text-white p-5 flex flex-col">
+        <div className="w-54 h-screen bg-slate-800 text-white p-5 flex flex-col fixed">
 
             {/* Logo */}
             <div className="flex justify-center items-center mb-10">
@@ -28,29 +37,15 @@ export default function Sidebar() {
             {/* Navigation Links */}
             <nav className="space-y-3">
 
-                <Link
-                    to="/dashboard"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-blue-700 transition"
-                >
-                    <LayoutDashboard size={20} />
-                    <span>Dashboard</span>
-                </Link>
+                {navLinks.map((link) => {
+                    const Icon = link.Icon
+                    return <NavLink key={link.path} className={({ isActive }) => `${navLinkclass} ${isActive ? "bg-orange-500" : "hover:bg-slate-600 hover:text-white transition"}`} to={link.path}>
+                        <Icon size={20} />
+                        {link.name}
+                    </NavLink>;
+                })
 
-                <Link
-                    to="/meal-list"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-blue-600 hover:text-white transition"
-                >
-                    <CreditCard size={20} />
-                    <span>Meal Card</span>
-                </Link>
-
-                <Link
-                    to="/meal-create"
-                    className="flex items-center gap-3 px-4 py-3 rounded-lg text-white hover:bg-blue-600 hover:text-white transition"
-                >
-                    <PlusCircle size={20} />
-                    <span>Meal Create</span>
-                </Link>
+                }
 
             </nav>
 
